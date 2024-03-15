@@ -10,23 +10,23 @@
 [![devDependencies Status](https://david-dm.org/lxieyang/chrome-extension-boilerplate-react/dev-status.svg)](https://david-dm.org/lxieyang/chrome-extension-boilerplate-react?type=dev)
 
 ## Features
-This is a wallet chrome extension with both popup and onboard inspired from metamask
+This is a wallet chrome extension with both popup and onboard inspired by metamask
 Used boilerplate of this guy: Michael Xieyang Liu | [Website](https://lxieyang.github.io).
 Refactored the structure of his boilerplate and moved:
 From React 17 to React 18
 From SCSS to Tailwind CSS
 
-The original boilerplate is updated with:
+The extension is updated with:
 
 - [Chrome Extension Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-overview/)
-- [React 17](https://reactjs.org)
+- [React 18](https://reactjs.org)
 - [Webpack 5](https://webpack.js.org/)
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
 - [Prettier](https://prettier.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-The original boilerplate is heavily inspired by and adapted from [https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate), with additional support for React 17 features and Webpack 5.
+The extension is heavily inspired by and adapted from [https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate), with additional support for React 17 features and Webpack 5.
 
 ### Procedures:
 
