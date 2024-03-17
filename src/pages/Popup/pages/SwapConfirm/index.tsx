@@ -1,7 +1,6 @@
 
 export const SwapConfirm = () => {
-
     return (
-        <div>SwapConfirm</div>
+        <div> Swap Confirm</div>
     )
 }

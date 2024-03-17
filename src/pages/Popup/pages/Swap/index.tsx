@@ -1,7 +1,10 @@
 
+import { BackHeader } from "../../container";
+
 export const Swap = () => {
-    
     return (
-        <div>Swap</div>
+        <>
+            <BackHeader headerTitle="Swap"/>
+        </>
     )
 }
