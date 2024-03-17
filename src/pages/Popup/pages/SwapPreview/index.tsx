@@ -1,7 +1,6 @@
 
 export const SwapPreview = () => {
-
     return (
-        <div>SwapPreview</div>
+        <div>Swap Preview</div>
     )
 }

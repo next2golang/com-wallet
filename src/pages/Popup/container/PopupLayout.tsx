@@ -1,4 +1,3 @@
-import React from "react";
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { PopupHeader } from "./PopupHeader";
@@ -11,6 +10,7 @@ import { Earn } from "../pages/Earn";
 import { Swap } from "../pages/Swap";
 
 const PopupLayout = () => {
+    
     return (
         <div className="popup-container">
             <PopupHeader />
