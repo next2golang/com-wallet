@@ -1,11 +1,31 @@
-
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 
 export const BackHeader = ({headerTitle}: {headerTitle: string}) => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const pathname = location.pathname;
+    console.log("location.pathname", location.pathname);
+
     const onGoBackClicked = () => {
-        navigate(-1);
+        if (['/earn', '/swap', '/history', '/setting', '/crypto-trade'].includes(pathname)) {
+            navigate('/homepage');
+        }
+        if (['/edit-account', '/manage-account', '/network', '/security-privacy-settings', '/developer-settings', '/about-commune'].includes(pathname)) {
+            navigate('/setting');
+        }
+        if (['/edit-account-name', '/check-seedphrase', '/check-privatekey'].includes(pathname)) {
+            navigate('/edit-account');
+        }
+        if (['/connected-websites', '/change-password', '/auto-lock'].includes(pathname)) {
+            navigate('/security-privacy-settings');
+        }
+        if (['/receive-token-detail'].includes(pathname)) {
+            navigate('/receive-token')
+        }
+        if (['/send-token-detail'].includes(pathname)) {
+            navigate('/send-token')
+        }
     }
 
     return (

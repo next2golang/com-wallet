@@ -13,7 +13,9 @@ export const CoinAmount = ({chainTitle, coinName, onClickHandler}: CoinAmountPro
             className="flex items-center w-80 h-16 pl-3 py-2 bg-[#121316] rounded cursor-pointer"
             onClick={onClickHandler}
         >
-            <CoinImage chainTitle={chainTitle} />
+            <CoinImage
+                chainTitle={chainTitle}
+            />
             <div className="flex flex-col justify-between py-1 pl-4">
                 <p className="text-base text-white">
                     {chainTitle}

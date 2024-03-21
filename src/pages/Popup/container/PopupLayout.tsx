@@ -8,6 +8,7 @@ import { ReceiveToken } from "../pages/ReceiveToken";
 import { CryptoTrade } from "../pages/CryptoTrade";
 import { Earn } from "../pages/Earn";
 import { Swap } from "../pages/Swap";
+import { SwapPreview } from "../pages/Swap/SwapPreview";
 
 const PopupLayout = () => {
     
@@ -16,12 +17,34 @@ const PopupLayout = () => {
             <PopupHeader />
             <Suspense>
                 <Routes>
-                    <Route path="/homepage" element={<Homepage/>} />
-                    <Route path="/send-token" element={<SendToken/>} />
-                    <Route path="/receive-token" element={<ReceiveToken/>} />
-                    <Route path="/earn" element={<Earn/>} />
-                    <Route path="/swap" element={<Swap/>} />
-                    <Route path="/crypto-trade" element={<CryptoTrade/>} />
+                    <Route
+                        path="/homepage"
+                        element={<Homepage/>}
+                    />
+                    <Route
+                        path="/send-token"
+                        element={<SendToken/>}
+                    />
+                    <Route
+                        path="/receive-token"
+                        element={<ReceiveToken/>}
+                    />
+                    <Route
+                        path="/earn"
+                        element={<Earn/>}
+                    />
+                    <Route
+                        path="/swap"
+                        element={<Swap/>}
+                    />
+                    <Route
+                        path="/swap-preview"
+                        element={<SwapPreview/>}
+                    />
+                    <Route
+                        path="/crypto-trade"
+                        element={<CryptoTrade/>}
+                    />
                 </Routes>
             </Suspense>
         </div>

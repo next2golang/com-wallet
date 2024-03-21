@@ -9,6 +9,7 @@ import { GoHome } from "react-icons/go";
 import { TbCoins } from "react-icons/tb";
 import { RiFileHistoryLine } from "react-icons/ri";
 import { MdOutlineSettings } from "react-icons/md";
+import { IoMdSwap } from "react-icons/io";
 
 export const ButtonIcon = ({iconName}: {iconName: string}) => {
 
@@ -21,6 +22,10 @@ export const ButtonIcon = ({iconName}: {iconName: string}) => {
             {
                 iconName === 'Earn' &&
                 <TbCoins className="text-lg" />
+            }
+            {
+                iconName === 'Swap' &&
+                <IoMdSwap className="text-lg"/>
             }
             {
                 iconName === 'History' &&

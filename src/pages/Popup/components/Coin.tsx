@@ -9,7 +9,9 @@ export const Coin = ({coinName, chainTitle}: CoinProps) => {
     
     return (
         <div className="flex items-center gap-1">
-            <CoinImage chainTitle={chainTitle} />
+            <CoinImage
+                chainTitle={chainTitle}
+            />
             <div className="flex flex-col justify-center items-start">
                 <p className="text-base text-white">
                     {coinName}

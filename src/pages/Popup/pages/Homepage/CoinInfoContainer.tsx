@@ -1,3 +1,5 @@
+import { index } from "@material-tailwind/react/types/components/select";
+
 interface CoinInfo {
     icon: any;
     coinTitle: string;
@@ -11,10 +13,13 @@ export const CoinInfoContainer = ({coinInfo}: {coinInfo: any}) => {
     return (
         <div className="flex flex-col items-center gap-1 mt-4">
             {
-                coinInfo.map((coin: CoinInfo) => {
+                coinInfo.map((coin: CoinInfo, index: index) => {
                     
                     return (
-                        <div className="flex w-[320px] h-[60px] bg-[#121316] rounded justify-between items-center pl-3">
+                        <div
+                            key={index}
+                            className="flex w-[320px] h-[60px] bg-[#121316] rounded justify-between items-center pl-3"
+                        >
                             <img
                                 src={coin.icon}
                                 alt={`${coin.coinTitle} icon`}

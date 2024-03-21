@@ -8,7 +8,7 @@ export const DeleteAccount = () => {
     const navigate = useNavigate();
 
     const onCancelClicked = () => {
-        navigate(-1);
+        navigate('/edit-account');
     }
     const onDeleteButtonClicked = () => {
         console.log('onDeleteButtonClicked');
