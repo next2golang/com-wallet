@@ -7,7 +7,7 @@ export const ReceiveToken = () => {
     const navigate = useNavigate();
 
     const onCloseButtonClicked = () => {
-        navigate(-1);
+        navigate('/homepage');
     }
     const onCoinClicked = () => {
         navigate('/receive-token-detail');

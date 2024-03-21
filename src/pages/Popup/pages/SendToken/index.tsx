@@ -7,7 +7,7 @@ export const SendToken = () => {
     const navigate = useNavigate();
     
     const onCloseButtonClicked = () => {
-        navigate(-1);
+        navigate('/homepage');
     }
     const onCoinClicked = () => {
         navigate('/send-token-detail');

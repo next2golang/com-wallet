@@ -1,11 +1,14 @@
-import { useState } from "react";
 import { BackHeader } from "../../../../container";
-import { ToggleButton } from "../../../../components";
 import lockImage from "../../../../assets/images/commune-lock.png";
+import { SetTimerContainer } from "./SetTimerContainer";
+import { LockContainer } from "./LockContainer";
+import { MainButton } from "../../../../components";
 
 export const AutoLock = () => {
-    const [checked, setChecked] = useState<boolean>(false);
 
+    const onSaveButtonClicked = () => {
+        console.log('save button clicked');
+    }
     return (
         <div className="popup-container">
             <BackHeader
@@ -22,11 +25,18 @@ export const AutoLock = () => {
                 className=" w-28 h-28 mt-3"
             />
 
-            <div className="mt-20">
-                <ToggleButton
-                    checked={checked}
-                    setChecked={setChecked}
-                    size='lg'
+            <div className="mt-6">
+                <SetTimerContainer />
+            </div>
+
+            <div className="mt-6">
+                <LockContainer />
+            </div>
+
+            <div className="mt-12">
+                <MainButton
+                    title="Save"
+                    onClick={onSaveButtonClicked}
                 />
             </div>
         </div>

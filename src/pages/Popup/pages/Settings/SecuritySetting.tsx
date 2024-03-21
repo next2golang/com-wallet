@@ -6,7 +6,7 @@ export const SecuritySetting = () => {
     const navigate = useNavigate();
 
     const onSecurityClicked = () => {
-        navigate('/secret-privacy-settings')
+        navigate('/security-privacy-settings')
     }
     const onDappClicked = () => {
         console.log('onDappClicked');

@@ -1,14 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { ToggleButtonHeader } from "./ToggleButtonHeader";
+import { PayCurrencyContainer } from "./PayCurrencyContainer";
+import { BuyCryptoContainer } from "./BuyCryptoContainer";
+import { SellCryptoContainer } from "./SellCryptoContainer";
+import { ReceiveCurrencyContainer } from "./ReceiveCurrencyContainer";
+import { TradeContext } from "../../container";
+import { TradeContextType } from "../../types";
+import { MainButton } from "../../components";
 
 export const CryptoTrade = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const tradeCategory = searchParams.get("tradeCategory");
 
-    type ButtonStatus = 'Buy' | 'Sell'
-    type TradeItemTitleStatus = 'I want to pay' | 'I want to sell'
+    const { tradeInfo, clearTradeInfo } = useContext(TradeContext) as TradeContextType;
 
-    const [selectedButtonTitle, setSelectedButtonTitle] = useState<ButtonStatus>('Buy');
-    const [tradeItemTitle, setTradeItemTitle] = useState<TradeItemTitleStatus>('I want to pay');
-    const [givingCoinName, setGivingCoin] = useState<string>('');
+    const [selectedButtonTitle, setSelectedButtonTitle] = useState<string>(String(tradeCategory));
 
     const onTradeButtonToggle = () => {
         if (selectedButtonTitle === 'Buy') {
@@ -17,24 +25,60 @@ export const CryptoTrade = () => {
             setSelectedButtonTitle('Buy');
         }
     }
-    
-    useEffect(() => {
-        if (selectedButtonTitle === 'Buy') {
-            setTradeItemTitle('I want to pay')
-        } else {
-            setTradeItemTitle('I want to sell')
-        }
-    },[selectedButtonTitle])
 
+    const onClick = () => {
+        clearTradeInfo();
+    }
     return (
         <>
             <ToggleButtonHeader
                 selectedButtonTitle={selectedButtonTitle}
                 onTradeButtonToggle={onTradeButtonToggle}
             />
+
             <p className="inline-block p-2 bg-[#AF6262] text-sm text-white text-center mt-8 rounded-lg">
-                Get a reduce transaction fee for holding 1000COM
+                Get a reduced transaction fee for holding 1000COM
             </p>
+
+            <div className="mt-6">
+                {
+                    selectedButtonTitle === 'Buy' &&
+                    <PayCurrencyContainer />
+                }
+                {
+                    selectedButtonTitle === 'Sell' &&
+                    <SellCryptoContainer />
+                }
+                
+            </div>
+
+            <div className="mt-6">
+                {
+                    selectedButtonTitle === 'Buy' &&
+                    <BuyCryptoContainer />
+                }
+                {
+                    selectedButtonTitle === 'Sell' &&
+                    <ReceiveCurrencyContainer />
+                }
+            </div>
+            
+            <div className="mt-10">
+                {
+                    selectedButtonTitle === 'Buy' &&
+                    <MainButton
+                        title="Pay with Stripe"
+                        onClick={onClick}
+                    />
+                }
+                {
+                    selectedButtonTitle === 'Sell' &&
+                    <MainButton
+                        title="Sell"
+                        onClick={onClick}
+                    />
+                }
+            </div>
         </>
     )
 }

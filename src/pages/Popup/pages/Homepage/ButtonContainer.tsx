@@ -1,8 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { IconButton } from "../../components";
+import { TradeContext } from "../../container";
+import { TradeContextType } from "../../types";
 
 export const ButtonContainer = () => {
-    
+    const { clearTradeInfo } = useContext(TradeContext) as TradeContextType;
+
     const navigate = useNavigate();
 
     const onSendButtonClicked = () => {
@@ -12,7 +16,13 @@ export const ButtonContainer = () => {
         navigate('/receive-token');
     }
     const onBuyButtonClicked = () => {
-        navigate('/crypto-trade');
+        clearTradeInfo();
+        navigate({
+            pathname: '/crypto-trade',
+            search: createSearchParams({
+                tradeCategory: "Buy"
+            }).toString()
+        });
     }
 
     return (

@@ -64,3 +64,35 @@ export interface CopyToClipBoardWithEyeToggleProps {
     onEyeToggleClicked: () => void,
     onCopyToClipboardClicked: () => void,
 }
+
+export interface SwapInfoType {
+    giveTokenName: string,
+    giveSystemName: string,
+    giveTokenAmount: number,
+    receiveTokenName: string,
+    receiveSystemName: string,
+    receiveTokenAmount: number,
+}
+
+export interface SwapContextType {
+    swapInfo: SwapInfoType,
+    updateSwapInfo: (updateSwapInfo: SwapInfoType) => void,
+    clearSwapInfo: () => void,
+}
+
+export interface TradeInfoType {
+    payTokenName: string,
+    payTokenAmount: number,
+    buyTokenName: string,
+    buyTokenAmount: number,
+    sellTokenName: string,
+    sellTokenAmount: number,
+    receiveTokenName: string,
+    receiveTokenAmount: number,
+}
+
+export interface TradeContextType {
+    tradeInfo: TradeInfoType,
+    updateTradeInfo: (updateTradeInfoData: TradeInfoType) => void,
+    clearTradeInfo: () => void,
+}

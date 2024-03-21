@@ -24,6 +24,7 @@ code {
   width: 370px;
   height: 570px;
   background-color: #0f0f12;
+  overflow-y: auto;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
